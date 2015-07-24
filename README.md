@@ -1,5 +1,5 @@
 Chargebee for Meteor.
-======
+========
 
 Wraps [chargebee-node](https://github.com/chargebee/chargebee-node), for use in a Meteor app.
 
