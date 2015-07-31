@@ -1,6 +1,6 @@
 Package.describe({
     name: 'taketime:chargebee',
-    version: '0.0.1',
+    version: '0.0.2',
     summary: 'Chargebee for Meteor',
     git: 'https://github.com/taketime/chargebee-meteor.git',
     documentation: 'README.md'
