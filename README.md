@@ -23,5 +23,20 @@ Meteor.startup(function() {
 
 * Do stuff described in the [chargebee api docs](https://apidocs.chargebee.com/docs/api?lang=node#client_library)
 
+## usage with Meteor's synchronous style -- requestSync
+
+All methods from the [npm module](https://github.com/chargebee/chargebee-node) exist and return a `RequestWrapper` object. That request may be run synchronously with `Chargebee.requestSync(requestWrapperObj)`.
+
+Example:
+```
+// Synchronously list the first five plans
+var request = Chargebee.plan.list({ limit: 5 });
+try {
+    Chargebee.requestSync(request);
+} catch (e) {
+    console.log("chargebee error", e);
+}
+```
+
 ## test
 `meteor test-packages ./`
