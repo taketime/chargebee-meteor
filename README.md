@@ -23,7 +23,7 @@ Meteor.startup(function() {
 
 * Do stuff described in the [chargebee api docs](https://apidocs.chargebee.com/docs/api?lang=node#client_library)
 
-## usage with Meteor's synchronous style -- requestSync
+## requestSync(requestObject, [optionsObject])
 
 All methods from the [npm module](https://github.com/chargebee/chargebee-node) exist and return a `RequestWrapper` object. That request may be run synchronously with `Chargebee.requestSync(requestWrapperObj)`.
 
@@ -33,6 +33,22 @@ Example:
 var request = Chargebee.plan.list({ limit: 5 });
 try {
     Chargebee.requestSync(request);
+} catch (e) {
+    console.log("chargebee error", e);
+}
+```
+
+You may also supply an `options` object, for replacing `api_key` or `site` in the request. This is useful if integrating across multiple chargebee instances. Tip: configure the global chargebee object with empty strings.  
+
+Example:
+```
+// Synchronously list the first five plans
+var request = Chargebee.plan.list({ limit: 5 });
+try {
+    Chargebee.requestSync(request, {
+        api_key: 'some-other-api-key',
+        site: 'some-other-site-key'
+    });
 } catch (e) {
     console.log("chargebee error", e);
 }

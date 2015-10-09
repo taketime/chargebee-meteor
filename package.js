@@ -1,6 +1,6 @@
 Package.describe({
     name: 'taketime:chargebee',
-    version: '0.0.2',
+    version: '0.0.3',
     summary: 'Chargebee for Meteor',
     git: 'https://github.com/taketime/chargebee-meteor.git',
     documentation: 'README.md'
@@ -16,6 +16,7 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
     api.use('tinytest');
+    api.use('underscore');
     api.use('taketime:chargebee');
     api.addFiles('chargebee-tests.js', 'server');
 });
