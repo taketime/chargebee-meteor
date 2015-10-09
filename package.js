@@ -16,6 +16,7 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
     api.use('tinytest');
+    api.use('underscore');
     api.use('taketime:chargebee');
     api.addFiles('chargebee-tests.js', 'server');
 });
