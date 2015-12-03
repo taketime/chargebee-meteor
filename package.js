@@ -6,7 +6,7 @@ Package.describe({
     documentation: 'README.md'
 });
 
-Npm.depends({ "chargebee": "1.2.5" });
+Npm.depends({ "chargebee": "1.2.9" });
 
 Package.onUse(function(api) {
     api.use('underscore');
